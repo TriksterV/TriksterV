@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+           <head>
+                 <metaa charset="uft-8">
+                 <title>Greeting</title>
+                 <style>
+                          #message {
+                                    font-size: 6em;
+                                    text-align: right;
+                  </style>
+            </head>                    
+            <body>
+                  <p id="message">Hello, World!</p>
+                  <script>
+                       setInterval(() => {
+                              const element = document.getElementById('message')
+                              const red   = Math.floor(Math.random() *256)
+                              const green = Math.floor(Math.random() *256)
+                              const blue  = Math.floor(Math.random() *256)
+                              element.style.color=`rgb(${red},${green},${blue}`;
+                            }, 100);
+                   </script>
+             </body>
+</html>

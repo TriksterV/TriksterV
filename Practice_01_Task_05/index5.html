@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №5</title>
+</head>
+<body>       
+<p id="result"></p>
+<script>
+    const num1 = parseInt (prompt("Введите первое число:"))
+    const num2 = parseInt (prompt("Введите первое число:"))
+    let res = num1 + num2
+    document.getElementById("result").innerHTML = 
+        `${num1} + ${num2} = ${res} <br>`
+    res = num1 - num2
+    document.getElementById("result").innerHTML +=
+        `${num1} - ${num2} = ${res}<br>`
+    res = num1 * num2
+    document.getElementById("result").innerHTML +=
+        `${num1} * ${num2} = ${res}<br>`
+    res = Math.trunc(num1 / num2) 
+    // Math.trunc (используется для нахождение только целого числа от деления без остатка)
+    document.getElementById("result").innerHTML +=
+        `${num1} / ${num2} = ${res}<br>`
+    res = num1 % num2
+    document.getElementById("result").innerHTML +=
+        `${num1} % ${num2} = ${res}<br>`
+    res = num1 ** num2
+    // Math.pow(num1, num2) (специальный код для взятия числа в степень , когда не существовал код "**"" )
+    document.getElementById("result").innerHTML +=
+        `${num1} ** ${num2} = ${res}<br>`
+
+</script>    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание №2</title>
+    </head>
+    <body>
+        <p id="result">*Привет мир*</p>
+       
+        <script>
+    //способ №1
+    console.log ("**********")
+    console.log("Привет,мир!")
+    console.log("**********")
+    //способ №2 c помощью команды перенома \n
+    console.log("*********\n*Привет,мир!*\n*********")
+    //способ №3 с помощью "+" "конкатенации"  "concatenacion"
+    console.log(
+        "***********\n" +
+        "*Привет,мир!*\n" +
+        "***********"
+    )
+     //способ №4
+     console.log (
+`**********
+*Привет,мир!*
+**********`
+        )
+        /*
+            Вывод текста в параграф HTML
+        */
+       //Способ №1
+        document.getElementById('result').innerHTML  ='************<br>'
+        document.getElementById('result').innerHTML +='*Привет, мир!*<br>'
+        document.getElementById('result').innerHTML +='************'
+
+
+        //Способ №2
+        document.getElementById('result').innerHTML =
+        "*************<br>" +
+        "*Привет,мир!*<br>" +
+        "*************"
+        
+        </script>
+       
+    </body>
+</html>
