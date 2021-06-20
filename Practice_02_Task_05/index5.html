@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Задане 5</title>
+</head>
+<body>
+     <p id="result"></p>
+    <script>
+        const F = parseFloat(prompt("Введите температуру:"))
+       
+        let C = (F - 32) * 5 / 9
+
+ 
+    document.getElementById("result").textContent =
+        `Температура в градусах Цельсия ${C.toFixed(2)}`
+        
+    </script>   
+</body>
+</html>

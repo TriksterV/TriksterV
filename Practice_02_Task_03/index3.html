@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание 3</title>
+</head>
+<body>
+     <p id="result"></p>
+    <script>
+        const num = prompt("Введите четырёхзначное число:")
+       const sum =
+       num % 10 +
+       Math.trunc(num / 10)  % 10 +
+       Math.trunc(num / 100) % 10 +
+       Math.trunc(num / 1000)
+
+    
+    
+    // const sum =
+    //     // parseInt(num[0]) + parseInt(num[1]) +
+    //     // parseInt(num [2]) + parseInt(num[3])
+    document.getElementById("result").textContent =
+        `Сумма всех цифр числа ${num} равна ${sum}`
+    </script>   
+</body>
+</html>

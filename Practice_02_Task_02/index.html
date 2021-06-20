@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <script>
+        let a = parseInt(prompt("Первое значение:")) 
+        let b = parseInt(prompt("Второе значение:"))
+
+        document.getElementById("result").innerHTML = `До перестановки: a = ${a}; b = ${b};<br>`
+  
+        a = a + b
+        b = a - b
+        a = a - b
+
+        
+        document.getElementById("result").innerHTML += `После перестановки: a = ${a}; b = ${b};`
+    </script>    
+</body>
+</html>
