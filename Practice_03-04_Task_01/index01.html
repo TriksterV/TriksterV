@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Воронов Кирилл">
+    <meta name="descripyion" content="Документация о языке разметки Markdown">
+    <title>Markdown</title>
+    <style>
+      table, td, th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 5px;
+      }
+    </style>
+</head>
+<body>
+  <title>Markdown</title>
+  <style>
+      table, td, th {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      th, td {
+          padding: 5px;
+      }
+  </style>
+</head>
+<body>
+  <header>
+      <img src="logo.svg" alt="Логотип Markdown" height="40"> <br>
+  <hl>Markdown</hl> 
+  <link rel="stylesheet" href="style.css">
+  <nav>
+    <ul>
+        <li><a href="#about">О языке</a></li>
+        <li><a href="#headings">Заголовки</a></li>
+        <li><a href="#emphasis">Акцент</a></li>
+        <li><a href="#links">Ссылки</a></li>
+        <li><a href="#images">Изображения</a></li>
+        <li><a href="#lists">Списки</a></li>
+        <li><a href="#quote">Цитаты</a></li>
+        <li><a href="#table">Таблицы</a></li>
+    </ul>
+</nav>
+<main>
+<article>
+      <h2>Документация о синтаксисе языка</h2>  
+  <selection id='about'>
+    <div class="subsection">
+      <h3>О языке</h3>
+      <p><b>Markdown</b> — это язык разметки, в котором, структура страницы описывается <em>специальными символами</em>. Эти символы визуально пытаются отразить графическое оформление элементов верстки.</p>
+  </div>
+  <div class="subsection">
+        <h3>Взаимодействие с HTML</h3>
+      <p>
+      В языке <i>Markdown</i> можно вставлять любые тэги на языке HTML. Большинство конверторов,
+      смогут обработать их вместе с языком Markdown.
+      </p>
+  </selection>
+  <hr>
+    
+  <section id="headings">
+    <h3>Заголовки</h3>
+    <p>Для создания заголовка первого уровня в языке Markdown, после заголовка нужно добавить символы знака равенства <code>=</code>.</p>
+    <p>Для создания заголовка второго уровня в языке Markdown, после заголовка нужно добавить символы тире <code>-</code>.</p>
+    <p>Для задачи заголовка любого уровня в языке Markdown можно добавить определенного количество знаков <code>#</code> перед заголовком.</p>
+    <h4>Пример:</h4>
+    <pre><code>Заголовок первого уровня
+========================
+
+Заголовок второго уровня
+------------------------
+
+# Заголовок первого
+## Второго
+###### ...шестого уровня</code></pre>
+    <h4>Приведет к генерации следующего HTML:</h4>
+    <h1>Заголовок первого уровня</h1>
+    <h2>Заголовок второго уровня</h2>
+    <h1>Заголовок первого</h1>
+    <h2>Второго</h2>
+    <h6>...шестого уровня</h6>
+  </section>
+    <hr>
+  <section id="emphasis">
+
+
+      <h3>Акцент и значимость текста</h3>
+      <p>Для указания акцента на слово, фразу или предложение необходимо обернуть текст в символы <code>_</code> или <code>*</code>.</p>
+      <p>Для указания высокой важности текста, текст следует обернуть в два символа <code>_</code> или <code>*</code>.</p>
+      <h4>Пример:</h4>
+      <pre><code>*текст на который установлен акцент*
+  _текст на который установлен акцент_
+  **текст высокой важности**
+  __текст высокой важности__</code></pre>
+      <p>Приведет к генерации следующего HTML:</p>
+      <em>текст на который установлен акцент</em><br>
+      <em>текст на который установлен акцент</em><br>
+      <strong>текст высокой важности</strong><br>
+      <strong>текст высокой важности</strong>
+  </section>
+    <hr>
+  <section id='links'>
+        <h3>Ссылки</h3>
+        <p>Для создания ссылки в языке Mardown необходимо использовать следующий синтаксис.</p>
+        <code><pre>[Пример ссылки] (https://examle.com)
+        [Пример ссылки с заголовком]
+        (https://examle.com "Заголовок ссылки")
+        <https://example.com></pre></code>
+        <p>Приведет к генерации следующего HTML:</p>
+        <a href="https://example.com">Пример ссылки</a><br>
+        <a href="https://example.com" title="Заголовок ссылки">Пример ссылки с заголовком</a>
+  </section>
+    <hr>
+  <section id="images">
+       <h3>Изображения</h3>
+       <p>Изображения в языке Markdown оформлены как ссылки с дополонительным сигнальным
+          символом ! в самом начале для систем, которые могут содержать изображения.</p>
+       <h4>Пример:</h4>
+       <code><pre>![Логотип Markdown](logo.png) </pre></code>
+       <p>Приведет к генерации следующего HTML:</p>
+       <img src="logo.png" 
+       alt="Логотип Mardown"
+       width="100" >
+  </section>
+    <hr>
+    </section>
+  <section id='lists'>
+       <h3>Списки</h3>
+       <div class="subsection">
+        <h4>Неупорядоченные списки</h4>
+        <p>Для создания неупорядоченного списка, перед элементами списка нужно добавить символ <code>*</code>, <code>+</code> или <code>-</code>.</p>
+        <h5>Пример:</h5>
+        <pre><code>* первый элемент списка
+    * второй элемент списка
+    * третий элемент списка
+    
+    + первый элемент списка
+    + второй элемент списка
+    + третий элемент списка
+    
+    - первый элемент списка
+    - второй элемент списка
+    - третий элемент списка</code></pre>
+        <p>Приведет к генерации следующего HTML:</p>
+        <ul>
+            <li>первый элемент списка</li>
+            <li>второй элемент списка</li>
+            <li>третий элемент списка</li>
+        </ul>
+        <ul>
+            <li>первый элемент списка</li>
+            <li>второй элемент списка</li>
+            <li>третий элемент списка</li>
+        </ul>
+        <ul>
+            <li>первый элемент списка</li>
+            <li>второй элемент списка</li>
+            <li>третий элемент списка</li>
+        </ul>
+        </div>
+        <div class="subsection">
+        <h4>Упорядоченные списки</h4>
+        <p>Для создания упорядоченного списка, перед элементами списка нужно поставить номер элемента списка.</p>
+        <h5>Пример:</h5>
+        <pre><code>1. первый элемент списка
+    2. второй элемент списка
+    3. третий элемент списка</code></pre>
+        <p>Приведет к генерации следующего HTML:</p>
+        <ol>
+            <li>первый элемент списка</li>
+            <li>второй элемент списка</li>
+            <li>третий элемент списка</li>
+        </ol>
+        </div>
+        <div class="subsection">
+        <h4>Списки определений</h4>
+        <p>Для создания списков определений необходимо использовать следующий синтаксис.</p>
+        <pre><code>слово
+    : определение слова
+    
+    другое слово
+    : другое определение слова</code></pre>
+        <p>Приведет к генерации следующего HTML:</p>
+        <dl>
+            <dt>слово</dt>
+            <dd>определение слова</dd>
+            <dt>другое слово</dt>
+            <dd>другое определение слова</dd>
+        </dl>
+        </div>
+  </section>
+    <hr>
+  <section id="quote">
+  <h3>Цитаты</h3>
+  <p>Как в почтовых сообщениях цитирование текста производится символами > в начале каждой строки.</p>
+  <h4>Пример:</h4>
+  <code><pre>
+    > Lorem ipsum, dolor sit amet consectetur
+    > adipisicing elit. Fugiat esse eius reprehenderit
+    > quasi totam velit! Voluptas illo hic incidunt nemo
+    > numquam est dicta pariatur alias optio, totam eius
+    > amet perferendis?</pre></code>
+    <p>Приведет к генерации следующего HTML:</p>
+    <blockquote>
+      > Lorem ipsum, dolor sit amet consectetur
+      > adipisicing elit. Fugiat esse eius reprehenderit
+      > quasi totam velit! Voluptas illo hic incidunt nemo
+      > numquam est dicta pariatur alias optio, totam eius
+      > amet perferendis?
+    </blockquote>
+  </section>
+    <hr>
+  <section id="table">
+  <h3>Таблицы</h3>
+  <p>В различных расширениях языка Markdown, таблицы можно задавать символом |.</p>
+  <h4>Пример:</h4>
+  <code><pre>
+| Клетка заголовка 1 | Клетка заголовка 2 | Клетка заголовка 3 
+| ------------------ | ------------------ | ------------------- |
+| Клетка 1           | Клетка 2           |  Клетка 3           |
+| Клетка 1           | Клетка 2           |  Клетка 3           |
+  </pre></code>
+      <table>
+        <thead>
+          <tr>
+            <th>Клетка заголовка 1</th>
+            <th>Клетка заголовка 2</th>
+            <th>Клетка заголовка 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Клетка 1</td>
+            <td>Клетка 2</td>
+            <td>Клетка 3</td>
+          </tr>
+          <tr>
+            <td>Клетка 1</td>
+            <td>Клетка 2</td>
+            <td>Клетка 3</td>
+          </tr>
+        </tbody>
+      </table>
+  </section>
+</article>
+</body>
+</html>
