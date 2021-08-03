@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №1</title>
+</head>
+<body>
+    <p id='result'></p>
+    <script>
+        const num = parseInt(prompt('Введите первое число:'))
+        
+        let message
+
+        if (num % 2 === 0) {
+            message = `Число ${num} является четным.`
+        } else {
+        // if (num % 2 !== 0) {
+            message = `Число ${num} является не четным.`
+        }
+        
+        document.getElementById("result").textContent = message
+    </script>
+</body>
+</html>

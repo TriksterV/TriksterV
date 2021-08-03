@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Воронов Кирилл">
-    <meta name="descripyion" content="Документация о языке разметки Markdown">
+    <meta name="description" content="Документация о языке разметки Markdown">
     <title>Markdown</title>
     <style>
       table, td, th {
@@ -16,22 +16,11 @@
     </style>
 </head>
 <body>
-  <title>Markdown</title>
-  <style>
-      table, td, th {
-          border: 1px solid black;
-          border-collapse: collapse;
-      }
-      th, td {
-          padding: 5px;
-      }
-  </style>
-</head>
-<body>
   <header>
-      <img src="logo.svg" alt="Логотип Markdown" height="40"> <br>
-  <hl>Markdown</hl> 
-  <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="style.css">  
+      <img src="logo.svg" alt="Логотип Markdown" height="40">
+      <h1>Markdown</h1>
+  </header>
   <nav>
     <ul>
         <li><a href="#about">О языке</a></li>
@@ -47,7 +36,7 @@
 <main>
 <article>
       <h2>Документация о синтаксисе языка</h2>  
-  <selection id='about'>
+  <section id='about'>
     <div class="subsection">
       <h3>О языке</h3>
       <p><b>Markdown</b> — это язык разметки, в котором, структура страницы описывается <em>специальными символами</em>. Эти символы визуально пытаются отразить графическое оформление элементов верстки.</p>
@@ -58,7 +47,7 @@
       В языке <i>Markdown</i> можно вставлять любые тэги на языке HTML. Большинство конверторов,
       смогут обработать их вместе с языком Markdown.
       </p>
-  </selection>
+  </section>
   <hr>
     
   <section id="headings">
@@ -105,10 +94,10 @@
   <section id='links'>
         <h3>Ссылки</h3>
         <p>Для создания ссылки в языке Mardown необходимо использовать следующий синтаксис.</p>
-        <code><pre>[Пример ссылки] (https://examle.com)
+        <pre><code>[Пример ссылки] (https://examle.com)
         [Пример ссылки с заголовком]
         (https://examle.com "Заголовок ссылки")
-        <https://example.com></pre></code>
+        <https://example.com></code></pre>
         <p>Приведет к генерации следующего HTML:</p>
         <a href="https://example.com">Пример ссылки</a><br>
         <a href="https://example.com" title="Заголовок ссылки">Пример ссылки с заголовком</a>

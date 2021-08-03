@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №1</title>
+</head>
+<body>
+    <p id='result'></p>
+    <script>
+        const year = parseInt(prompt("Введите год:"))
+
+        let message
+
+        // if (year % 4 != 0) {
+        //     message = `${year} НЕ является високосным годом.`
+        // } else if (year % 100 !== 0) {
+        //     message = `${year} является високосным годом.`
+        // } else if (year % 400 !== 0) {
+        //     message = `${year} НЕ является високосным годом.`
+        // } else {
+        //     message = `${year} является високосным годом.`
+        // }
+
+        if (year % 4 === 0 && year % 100 !== 0 || year % 400 === 0) {
+            message = `${year} является високосным годом.`
+        } else {
+            message = `${year} НЕ является високосным годом.`
+        }
+        document.getElementById("result").textContent = message
+    </script>
+</body>
+</html>
