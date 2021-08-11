@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №8</title>
+</head>
+<body>
+    <p id='result'></p>
+    <script>
+        const points = parseInt(prompt("Введите количество балов:"))
+
+        let message
+        // if (points >= 90 && points <= 100) {
+        //     message = "Оценка: A"
+        // }  else if (points >= 80 && points < 90) {
+        //     message = "Оценка: B"
+        // }  else if (points >= 70 && points < 80) {
+        //     message = "Оценка: C"
+        // }  else if (points >= 60 && points < 70) {
+        //     message = "Оценка: D"
+        // }  else if (points >= 0 && points < 60) {
+        //     message = "Оценка: F"
+        // } else {
+        //     message = `Значение ${points} является некоректным`
+        // }
+
+        if (points > 100 || points < 0) {
+            message = `Значение ${points} является некоректным`
+        } else  if (points >=90) {
+            message = "Оценка: A"
+        }  else  if (points >=80) {
+            message = "Оценка: B"
+        }  else  if (points >=70) {
+            message = "Оценка: C"
+        }  else  if (points >=60) {
+            message = "Оценка: D"
+        }  else {
+            message = "Оценка: F"
+        }
+
+
+        document.getElementById("result").textContent = message
+        </script>
+    </body>
+    </html>
+
+    
