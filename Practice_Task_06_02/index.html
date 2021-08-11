@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №2</title>
+</head>
+<body>
+    <p id='result'></p>
+    <script>
+        const num = parseInt(prompt('Введите целое число'))
+
+        let sum = 0
+        while (num !=0) {
+            sum += num % 10
+            num = Math.trunc(num / 10)
+        }
+        document.getElementById("result").textContent = `Сумма всех цифр равна`
+        </script>
+    </body>
+    </html>
