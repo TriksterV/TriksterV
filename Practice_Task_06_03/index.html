@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №3</title>
+</head>
+<body>
+    <p id='result'></p>
+    <script>
+        const min = 0 
+        const max = 10
+        
+        let testCount = parseInt(prompt('Введите количество тестов'))
+
+        let correctAnswers = 0 
+        let incorrectAnswers = 0
+
+        // let i = 1
+        // while (i <= testCount) {
+        //     const num1 = Math.trunc(min + Math.random() * (max - min + 1))
+        //     const num2 = Math.trunc(min + Math.random() * (max - min + 1))
+        //     const answer = parseInt(prompt(`${num1} + ${num2} = ?`))
+        //     if  (Math.abs((num1 + num2) - answer) < 0.0000001) {
+        //         correctAnswers++
+        //     } else {
+        //         incorrectAnswers++
+        //     }
+
+        //     i++
+        // }
+
+        for (let i = 1; i <= testCount; i++) {
+            const num1 = Math.trunc(min + Math.random() * (max - min + 1))
+            const num2 = Math.trunc(min + Math.random() * (max - min + 1))
+            const answer = parseInt(prompt(`${num1} + ${num2} = ?`))
+            if  (Math.abs((num1 + num2) - answer) < 0.0000001) {
+                correctAnswers++
+            } else {
+                incorrectAnswers++
+            }
+        }
+        
+        if (testCount > 0) {
+            document.getElementById("result").innerHTML =   
+                `Количество правильных ответов:   ${correctAnswers}<br>` +
+                `Количество неправильных ответов: ${incorrectAnswers}`
+        }
+        </script>
+    </body>
+    </html>
