@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №9</title>
+</head>
+<body>
+    <p id='result'></p>
+    <script>
+        const month = parseInt(prompt("Введите номер месяца:"))
+        
+        let message
+        // if(month === 1) {
+        //     message = "Январь"
+        // } else if (month ==2) {
+        //     message = "Февраль"
+        // } else if (month ==3) {
+        //     message = "Март"
+        // } else if (month ==4) {
+        //     message = "Апрель"
+        // } else if (month ==5) {
+        //     message = "Май"
+        // } else if (month ==6) {
+        //     message = "Июнь"
+        // } else if (month ==7) {
+        //     message = "Июль"
+        // } else if (month ==8) {
+        //     message = "Августь"
+        // } else if (month ==9) {
+        //     message = "Сентябрь"
+        // } else if (month ==10) {
+        //     message = "Октябрь"
+        // } else if (month ==11) {
+        //     message = "Ноябрь"
+        // } else if (month ==12) {
+        //     message = "Декабрь"
+        // } else {
+        //     message = "Неверный номер месяца"
+        // }
+
+        switch (month) {
+            case 1:
+                message = "Январь" break;
+                
+            case 2:
+                message = "Февраль" break;
+                
+            case 3:
+                message = "Март"   break;
+              
+            case 4:
+                message = "Апрель";   break;
+            case 5:
+                message = "Май";      break;    
+            case 6:
+                message = "Июнь";     break;  
+            case 7:
+                message = "Июль";     break;
+            case 8:
+                message = "Август";   break;               
+            case 9:
+                message = "Сентябрь"; break;             
+            case 10:
+                message = "Октябрь";  break;             
+            case 11:
+                message = "Ноябрь";   break             
+            case 12:
+                message = "Декабрь";  break;          
+            default:
+                message = "Неверный номер месяца"      
+        }
+        
+        document.getElementById("result").textContent = message
+        </script>
+    </body>
+    </html>
