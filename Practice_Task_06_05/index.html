@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Задания №5</title>
+        <style>
+            body { margin: 0; overflow: hidden }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                function startDrawing() {
+                    const canvas = document.getElementById('canvas')
+                    const width  = canvas.width  = window.innerWidth
+                    const height = canvas.height = window.innerHeight
+                    draw(canvas.getContext('2d'), width, height)
+                }
+                window.addEventListener('resize', startDrawing); startDrawing()
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            const count = 30
+
+            function draw(ctx, width, height) {
+                ctx.fillStyle = 'black'
+                ctx.fillRect(0, 0, width, height)
+
+                let radius = Math.min (width, height) / 2
+                let red = 0
+
+                const radiusStep = radius / count
+                const redStep = 255 / count
+
+                for(let i = 0; i < count; i++) {
+
+                ctx.fillStyle = `rgb(${red}, 0, 0)`
+                ctx.beginPath()
+                ctx.arc( width / 2, height / 2, radius, 0, Math.PI * 2)
+                ctx.fill()
+
+                radius -= radiusStep
+                red += redStep
+            }
+        }
+        </script>
+    </body>
+</html>
