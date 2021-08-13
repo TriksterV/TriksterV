@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Задание №4</title>
+        <style>
+            body { margin: 0; overflow: hidden }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                function startDrawing() {
+                    const canvas = document.getElementById('canvas')
+                    const width  = canvas.width  = window.innerWidth
+                    const height = canvas.height = window.innerHeight
+                    draw(canvas.getContext('2d'), width, height)
+                }
+                window.addEventListener('resize', startDrawing); startDrawing()
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            const count     = 100
+            const minRadius = 200
+            const maxRadius = 300
+
+        function draw(ctx, width, height) {
+                ctx.fillStyle = 'black'
+                ctx.fillRect(0, 0, width, height)
+                
+                for (let i = 0; i < count; i++) {
+                const x = Math.random() * width
+                const y = Math.random() * height
+
+                const red   = Math.trunc(Math.random() * 256)
+                const green = Math.trunc(Math.random() * 256)
+                const blue  = Math.trunc(Math.random() * 256)
+
+                const radius = minRadius + Math.random() * (maxRadius - minRadius)
+
+                ctx.fillStyle = `rgb(${red}, ${green}, ${blue})`
+                ctx.beginPath()
+                ctx.arc(x, y, radius, 0, Math.PI * 2)
+                ctx.fill()
+            }
+        }
+        </script>
+    </body>
+</html>
