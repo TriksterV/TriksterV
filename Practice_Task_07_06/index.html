@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Задание №6</title>
+        <style>
+            body { margin: 0; overflow: hidden }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const canvas = document.getElementById('canvas')
+                const width  = canvas.width  = window.innerWidth
+                const height = canvas.height = window.innerHeight
+                setup(canvas.getContext('2d'), width, height)
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            const count = 500
+            const radius = 8
+            const xs = Array(count)
+            const ys = Array(count)
+            const dxs = Array(count)
+            const dys = Array(count)
+            const maxSpeed = 4
+
+            function random(min, max) {
+                return min + Math.trunc(min + Math.random() * (max - min + 1))
+            }
+
+            function setup(ctx, width, height) {
+                for (let i = 0; i < count; i++) {
+                xs[i] = random(radius, width - radius - 1)
+                ys[i] = random(radius, height - radius - 1)
+                dxs[i] = random(-maxSpeed, maxSpeed)
+                if (dxs[i] === 0) {dxs [i] = 1}
+                dys[i] = random(-maxSpeed, maxSpeed)
+                if (dys[i] === 0) {dys[i] = 1}
+                }
+                window.requestAnimationFrame(timestamp => draw(ctx, width, height, timestamp))
+            }
+
+            function draw(ctx, width, height, timestamp) {
+                if (width != window.innerWidth || height != window.innerHeight) {
+                    width = canvas.width  = window.innerWidth
+                    height = canvas.height = window.innerHeight
+                }
+
+                ctx.fillStyle = 'rgba(0, 0, 0, 0.1)'
+                ctx.beginPath()
+                ctx.rect(0, 0, width, height)
+                ctx.fill()
+
+                for (let i = 0; i < count; i++) {
+                ctx.fillStyle = 'white'
+                ctx.beginPath()
+                ctx.arc(xs[i], ys[i], radius, 0, 2 * Math.PI)
+                ctx.fill()
+
+                xs [i] += dxs[i]
+                if (xs[i] + radius > width || xs[i] - radius < 0) {
+                    dxs[i] = -dxs[i]
+                }
+
+                ys[i] += dys[i]
+                if (ys[i] + radius > height || ys[i] - radius < 0) {
+                    dys[i] = -dys[i]
+                    }
+                }
+                window.requestAnimationFrame(timestamp => draw(ctx, width, height, timestamp))
+            }
+        </script>
+    </body>
+</html>
