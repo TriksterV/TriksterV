@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №3</title>
+</head>
+<body>
+    <p id='result'></p>
+    <script>
+            let n = parseInt(prompt('N:'))
+            const numbers = Array(n)
+            for(let i = 0; i < n; i++) {
+                numbers[i] = parseInt(prompt(`Введите элемент ${i}:`))
+            }
+
+            let message 
+            if (n > 0) {
+                let min = numbers [0]
+                let max = numbers [0]
+                for (const num of numbers) {
+                    if (num < min) {min = num}
+                    if (num > max) {max = num}
+                }
+                message =
+                    `Минимальное значение: ${min}<br>` +
+                    `Максимально значение: ${max}`
+                //     for (let i = 1; i < numbers.length; i++) {
+                //         if (num < min) {min = num}
+                //     if (num > max) {max = num}
+                // }
+            } else {
+                message = 'Нет данных для нахождения минимального и максимально'
+            }
+            
+            document.getElementById("result").innerHTML = message
+        </script>
+    </body>
+    </html>
