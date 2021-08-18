@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Задания №5</title>
+        <style>
+            body { margin: 0; overflow: hidden }
+        </style>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                function startDrawing() {
+                    const canvas = document.getElementById('canvas')
+                    const width  = canvas.width  = window.innerWidth
+                    const height = canvas.height = window.innerHeight
+                    draw(canvas.getContext('2d'), width, height)
+                }
+                window.addEventListener('resize', startDrawing); startDrawing()
+            })
+        </script>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script>
+            function star(ctx, rays, x, y, radius1, radius2, angle) {
+                rays += rays % 2
+                const angleDelta = 2 * Math.PI / rays
+
+                let prevEndX = x + Math.cos(angle - angleDelta) * radius2
+                let prevEndY = y + Math.sin(angle - angleDelta) * radius2
+
+                for (let i = 0; i < rays; i++) { 
+                    const radius = i % 2 === 0 ? radius1 : radius2
+                    const endX = x + Math.cos(angle) * radius
+                    const endY = y + Math.sin(angle) * radius
+
+                    ctx.beginPath()
+                    ctx.moveTo(x, y)
+                    ctx.lineTo(endX, endY)
+                    ctx.lineTo( prevEndX,  prevEndY)
+                    ctx.stroke()
+
+                    angle += angleDelta
+                    prevEndX = endX
+                    prevEndY = endY
+                }
+            }
+            
+            function draw(ctx, width, height) {
+                ctx.fillStyle = 'black'
+                ctx.fillRect(0, 0, width, height)
+
+                ctx.lineWidth = 3
+                ctx.lineJoin = 'round'
+
+                ctx.strokeStyle = 'red'
+                star(ctx, 8 , width / 2, height / 2, 200, 70, 0)
+
+                ctx.strokeStyle = 'yellow'
+                star(ctx, 8 , width / 2 - 150, height / 2 - 200, 100, 30, 0)
+                star(ctx, 8 , width / 2 + 150, height / 2 - 200, 100, 30, 0)
+                star(ctx, 8 , width / 2 + 150, height / 2 + 200, 100, 30, 0)
+                star(ctx, 8 , width / 2 - 150, height / 2 + 200, 100, 30, 0)
+            }
+        </script>
+    </body>
+</html>
