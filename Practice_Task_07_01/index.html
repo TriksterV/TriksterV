@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задание №1</title>
+</head>
+<body>
+    <p id='result'></p>
+    <script>
+        function random (min, max) {
+            return Math.trunc(min + Math.random() * (max - min + 1))
+        }
+
+        const counts = Array(11).fill(0)
+        
+        const n = parseInt(prompt('N:'))
+        for (let i = 0; i < n; i++) {
+            const die1 = random(1, 6)
+            const die2 = random(1, 6)
+            const sum = die1 + die2
+            const[sum - 2]++
+        }
+
+        let message = ''
+        for (let i = 0; i < 11; i++) {
+            message += `${i + 2}: ${counts[i]}<br>`
+        }
+    </script>
+</body>
+</html>
